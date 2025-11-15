@@ -1,8 +1,8 @@
-import type { Breed, Cat } from '../types';
 import api from './api';
 import endpoints from './endpoints';
 
 import C from './constants';
+import type { Breed, Cat } from '../types';
 
 const fetchRandomCats = async (
   limit: number = C.DEFAULT_CATS_LIMIT

@@ -33,23 +33,23 @@ export default defineConfig([
         'error',
         {
           groups: [
-            // 1. React and React Router DOM
-            ['^react$', '^react-router-dom'],
-            // 2. Redux hooks and third-party libraries (excluding type imports)
-            ['^(?!.*\\btype\\b)@?\\w'],
-            // 3. Custom hooks (relative imports starting with use*.ts)
-            ['^\\.+\\/use[A-Z]\\w*$'],
-            // 4. Component imports (not utils, constants, hooks, or types)
+            // 1. React & React Router
+            ['^react', '^react-router'],
+            // 2. Third-party libraries & Relative imports (no empty line between)
             [
-              '^(?!.*\\btype\\b)(?!.*(?:\\/utils|\\/constants|\\/use[A-Z])).*\\/components\\/',
+              '^[^./@]',
+              '^@(?!.*/types)',
+              '^\\./(?!(?:utils|constants))',
+              '^\\.\\./(?!(?:utils|constants))',
             ],
-            ['^(?!.*\\btype\\b)\\.\\.?\\/(?!(?:utils|constants|use[A-Z]))'],
-            // 5. Utils and Constants
-            ['^\\.+\\/(?:utils|constants)$'],
-            // 6. CSS modules
-            ['\\.module\\.css$'],
-            // 7. Type imports
-            ['^.*\\btype\\b'],
+            // 3. Utils, Constants, CSS modules, Types (all together after empty line)
+            [
+              'utils',
+              'constants',
+              '\\.module\\.css$',
+              '^.*/types',
+              '^@.*/types',
+            ],
           ],
         },
       ],

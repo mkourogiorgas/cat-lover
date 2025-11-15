@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-
 import breedsReducer from './breedsSlice';
 import favouritesReducer from './favouritesSlice';
 import galleryReducer from './gallerySlice';

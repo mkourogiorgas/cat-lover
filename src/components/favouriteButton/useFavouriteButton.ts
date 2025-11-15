@@ -1,8 +1,8 @@
 import { favouritesActions } from '../../store/favouritesSlice';
 import { useCatsDispatch } from '../../store/hooks';
-import type { Cat } from '../../types';
 
 import U from './utils';
+import type { Cat } from '../../types';
 
 type UseFavouriteButtonProps = {
   cat: Cat;

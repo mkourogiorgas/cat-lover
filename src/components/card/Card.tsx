@@ -1,11 +1,10 @@
-import useCard from './useCard';
-
-import type { Cat } from '../../types';
 import CardImage from './CardImage';
 import CardSkeleton from './CardSkeleton';
+import useCard from './useCard';
 import FavouriteButton from '../favouriteButton';
 
 import styles from './Card.module.css';
+import type { Cat } from '../../types';
 
 type CardProps = {
   cat: Cat;

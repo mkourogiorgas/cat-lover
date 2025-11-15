@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import useNavigation from './useNavigation';
 
 import C from './constants';
-
 import styles from './Navigation.module.css';
 
 const Navigation = () => {

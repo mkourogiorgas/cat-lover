@@ -1,6 +1,5 @@
-import type { Cat } from '../../types';
-
 import styles from './Card.module.css';
+import type { Cat } from '../../types';
 
 type CardImageProps = {
   cat: Cat;

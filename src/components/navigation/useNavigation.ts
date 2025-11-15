@@ -20,8 +20,7 @@ const useNavigation = (): UseNavigationState => {
   };
 
   const isGalleryActive =
-    location.pathname === C.DEFAULT_PATH ||
-    location.pathname.startsWith(C.CAT_PATH);
+    isActive(C.DEFAULT_PATH) || location.pathname.startsWith(C.CAT_PATH);
 
   const isBreedsActive = isActive(C.BREEDS_PATH);
   const isFavouritesActive = isActive(C.FAVOURITES_PATH);

@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
+
 import useBreeds from './useBreeds';
 import { Card, ErrorMessage, LoadingSpinner } from '../../components';
+
 import U from './utils';
 import C from './constants';
-import styles from './breeds.module.css';
+import layoutStyles from '../shared/viewsLayout.module.css';
 
 const Breeds = () => {
   const { cachedBreeds, areBreedsEmpty, isInitialLoading, error, loadBreeds } =
@@ -21,9 +23,9 @@ const Breeds = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>{C.TITLE_TEXT}</h1>
-      <div className={styles.grid}>
+    <div className={layoutStyles.container}>
+      <h1 className={layoutStyles.title}>{C.TITLE_TEXT}</h1>
+      <div className={layoutStyles.grid}>
         {cachedBreeds.map((breed) => (
           <Card
             key={breed.id}

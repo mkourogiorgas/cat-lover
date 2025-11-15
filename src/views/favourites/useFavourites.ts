@@ -1,4 +1,5 @@
 import { selectFavourites, useCatsSelector } from '../../store/hooks';
+
 import type { Cat } from '../../types';
 
 const useFavourites = () => {

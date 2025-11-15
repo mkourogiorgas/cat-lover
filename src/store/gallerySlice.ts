@@ -11,12 +11,10 @@ const gallerySlice = createSlice({
   initialState: initialGalleryState,
   reducers: {
     addCats: (state, action: PayloadAction<Cat[]>) => {
-      console.log('REDUCER CALLED - addCats action payload:', action.payload);
       const newState = { ...state };
       action.payload.forEach((cat) => {
         newState[cat.id] = cat;
       });
-      console.log('REDUCER - State after update:', newState);
       return newState;
     },
     clearCats: () => initialGalleryState,

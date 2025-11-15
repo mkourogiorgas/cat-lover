@@ -9,6 +9,7 @@ import C from './constants';
 import type { Cat } from '../../types';
 
 const useGallery = () => {
+  const [cats, setCats] = useState<Cat[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,24 +27,26 @@ const useGallery = () => {
 
     fetchRandomCats(C.NUMBER_OF_CATS_TO_BE_FETCHED)
       .then((newCats) => {
-        const existingIds = new Set(cachedCats.map((cat) => cat.id));
-        const uniqueNewCats = newCats.filter((cat) => !existingIds.has(cat.id));
+        const existingCats = new Set(cats.map((cat) => cat.id));
+        const uniqueNewCats = newCats.filter(
+          (cat) => !existingCats.has(cat.id)
+        );
 
-        if (uniqueNewCats.length) {
-          dispatch(galleryActions.addCats(uniqueNewCats));
-        }
+        dispatch(galleryActions.addCats(uniqueNewCats));
+        setCats((prev) => [...prev, ...uniqueNewCats]);
       })
-      .catch((error) => {
+      .catch((err) => {
         setError(C.ERROR_MESSAGE);
-        console.error(error);
+        console.error(err);
       })
       .finally(() => {
         setIsLoading(false);
       });
-  }, [cachedCats, dispatch]);
+  }, [cats, dispatch]);
 
   const clearCats = useCallback(() => {
     dispatch(galleryActions.clearCats());
+    setCats([]);
   }, [dispatch]);
 
   return {

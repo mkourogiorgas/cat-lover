@@ -1,15 +1,13 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import useGallery from './useGallery';
-
-import { Card } from '../../components';
 import GalleryButtons from './GalleryButtons';
+import useGallery from './useGallery';
+import { Card } from '../../components';
 import { ErrorMessage, LoadingSpinner } from '../../components';
 
 import C from './constants';
-
-import styles from './gallery.module.css';
+import layoutStyles from '../shared/viewsLayout.module.css';
 
 const Gallery = () => {
   const {
@@ -34,9 +32,9 @@ const Gallery = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>{C.TITLE_TEXT}</h1>
-      <div className={styles.grid}>
+    <div className={layoutStyles.container}>
+      <h1 className={layoutStyles.title}>{C.TITLE_TEXT}</h1>
+      <div className={layoutStyles.grid}>
         {cachedCats.map((cat) => (
           <Card
             cat={cat}

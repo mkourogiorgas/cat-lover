@@ -1,7 +1,7 @@
+import FavouriteButtonImage from './FavouriteButtonImage';
 import useFavouriteButton from './useFavouriteButton';
 
 import type { Cat } from '../../types';
-import FavouriteButtonImage from './FavouriteButtonImage';
 
 type FavouriteButtonProps = {
   cat: Cat;

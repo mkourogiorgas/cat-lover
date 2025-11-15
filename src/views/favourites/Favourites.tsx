@@ -1,16 +1,19 @@
 import { Outlet } from 'react-router-dom';
-import Card from '../../components/card';
-import C from './constants';
-import styles from './favourites.module.css';
+
 import useFavourites from './useFavourites';
+import Card from '../../components/card';
+
+import C from './constants';
+import layoutStyles from '../shared/viewsLayout.module.css';
+import styles from './favourites.module.css';
 
 const Favourites = () => {
   const { favouriteCats, isFavouritesEmpty } = useFavourites();
 
   if (isFavouritesEmpty) {
     return (
-      <div className={styles.container}>
-        <h1 className={styles.title}>{C.TITLE_TEXT}</h1>
+      <div className={layoutStyles.container}>
+        <h1 className={layoutStyles.title}>{C.TITLE_TEXT}</h1>
         <p className={styles.emptyMessage}>{C.EMPTY_MESSAGE}</p>
         <Outlet />
       </div>
@@ -18,9 +21,9 @@ const Favourites = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>{C.TITLE_TEXT}</h1>
-      <div className={styles.grid}>
+    <div className={layoutStyles.container}>
+      <h1 className={layoutStyles.title}>{C.TITLE_TEXT}</h1>
+      <div className={layoutStyles.grid}>
         {favouriteCats.map((cat) => (
           <Card cat={cat} isFavourite hasTitle={false} key={cat.id} />
         ))}

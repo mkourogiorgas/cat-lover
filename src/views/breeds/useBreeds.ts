@@ -7,9 +7,9 @@ import {
   useCatsDispatch,
   useCatsSelector,
 } from '../../store/hooks';
-import type { Breed } from '../../types';
 
 import C from './constants';
+import type { Breed } from '../../types';
 
 const useBreeds = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);

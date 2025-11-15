@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
-import type { Breed, Cat } from '../../types';
-
 import C from './constants';
+import type { Breed, Cat } from '../../types';
 
 type UseCardProps = {
   cat: Cat;

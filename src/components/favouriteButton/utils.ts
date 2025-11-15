@@ -1,5 +1,4 @@
 import C from './constants';
-
 import styles from './FavouriteButton.module.css';
 
 const getHeartFillColor = (
