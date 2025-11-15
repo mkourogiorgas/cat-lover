@@ -1,3 +1,5 @@
+import Navigation from './components/navigation';
+
 import AppRouter from './router';
 
 import './App.css';
@@ -5,7 +7,10 @@ import './App.css';
 const App = () => {
   return (
     <div className="app">
-      <AppRouter />
+      <Navigation />
+      <main className="main">
+        <AppRouter />
+      </main>
     </div>
   );
 };
