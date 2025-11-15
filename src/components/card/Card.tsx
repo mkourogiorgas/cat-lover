@@ -3,15 +3,17 @@ import useCard from './useCard';
 import type { Cat } from '../../types';
 import CardImage from './CardImage';
 import CardSkeleton from './CardSkeleton';
+import FavouriteButton from '../favouriteButton';
 
 import styles from './Card.module.css';
 
 type CardProps = {
   cat: Cat;
+  isFavourite: boolean;
   hasTitle: boolean;
 };
 
-const Card = ({ cat, hasTitle }: CardProps) => {
+const Card = ({ cat, isFavourite, hasTitle }: CardProps) => {
   const { breedText, isLoaded, getImagePosition, handleImageLoaded } = useCard({
     cat,
   });
@@ -25,6 +27,15 @@ const Card = ({ cat, hasTitle }: CardProps) => {
           imagePosition={getImagePosition()}
           onLoad={handleImageLoaded}
         />
+        {!hasTitle && (
+          <div className={styles.favouriteButtonWrapper}>
+            <FavouriteButton
+              cat={cat}
+              isFavourite={isFavourite}
+              variant="compact"
+            />
+          </div>
+        )}
         {hasTitle && breedText && (
           <div className={styles.breedName}>{breedText}</div>
         )}

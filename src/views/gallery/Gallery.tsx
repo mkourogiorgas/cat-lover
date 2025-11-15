@@ -14,6 +14,7 @@ import styles from './gallery.module.css';
 const Gallery = () => {
   const {
     cachedCats,
+    favouriteCats,
     isInitialLoading,
     isLoading,
     isGalleryEmpty,
@@ -37,7 +38,12 @@ const Gallery = () => {
       <h1 className={styles.title}>{C.TITLE_TEXT}</h1>
       <div className={styles.grid}>
         {cachedCats.map((cat) => (
-          <Card cat={cat} hasTitle={false} key={cat.id} />
+          <Card
+            cat={cat}
+            isFavourite={!!favouriteCats[cat.id]}
+            hasTitle={false}
+            key={cat.id}
+          />
         ))}
       </div>
       {error && <ErrorMessage message={error} />}
