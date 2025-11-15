@@ -13,4 +13,4 @@ export const selectFavourites = (state: RootState) => state.favourites;
 
 export const selectGallery = (state: RootState) => state.gallery;
 
-export const selectBreeds = (state: RootState) => state.breeds.breeds;
+export const selectBreeds = (state: RootState) => state.breeds;
