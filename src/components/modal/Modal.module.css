@@ -1,0 +1,181 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(61, 40, 23, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background: #fff;
+  border-radius: 1rem;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 3px solid #3d2817;
+  box-shadow: 0 8px 32px rgba(61, 40, 23, 0.3);
+  padding: 3rem 3rem 0 3rem;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #3d2817;
+  font-weight: bold;
+  z-index: 10;
+  padding: 0;
+  line-height: 1;
+}
+.closeButton:hover {
+  color: #ff6b9d;
+  background: none;
+  transform: none;
+}
+
+.imageContainer {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+}
+
+.content {
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favouriteButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.125rem;
+  color: #3d2817;
+}
+
+.error {
+  color: #dc3545;
+}
+
+.breedInfo {
+  text-align: center;
+}
+
+.breedName {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #3d2817;
+}
+
+.breedDescription {
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  color: #5a4a3a;
+  line-height: 1.6;
+}
+
+.breedDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  background: #fce8b8;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.detailItem {
+  font-size: 0.9375rem;
+  color: #3d2817;
+  line-height: 1.5;
+}
+
+.detailItem strong {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.breedLink {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #fcc76f;
+  color: #3d2817;
+  text-decoration: none;
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  border: 2px solid #3d2817;
+}
+
+.breedLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(61, 40, 23, 0.2);
+  background: #fbb94e;
+}
+
+.noBreed {
+  text-align: center;
+  color: #8b7355;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 1rem;
+  }
+
+  .modal {
+    max-height: 95vh;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .breedName {
+    font-size: 1.5rem;
+  }
+
+  .breedDetails {
+    padding: 1rem;
+  }
+}

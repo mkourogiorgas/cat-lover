@@ -25,7 +25,7 @@ const Favourites = () => {
       <h1 className={layoutStyles.title}>{C.TITLE_TEXT}</h1>
       <div className={layoutStyles.grid}>
         {favouriteCats.map((cat) => (
-          <Card cat={cat} isFavourite hasTitle={false} key={cat.id} />
+          <Card cat={cat} isFavourite isBreed={false} key={cat.id} />
         ))}
       </div>
       <Outlet />

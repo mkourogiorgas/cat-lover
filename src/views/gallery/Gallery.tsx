@@ -39,7 +39,7 @@ const Gallery = () => {
           <Card
             cat={cat}
             isFavourite={!!favouriteCats[cat.id]}
-            hasTitle={false}
+            isBreed={false}
             key={cat.id}
           />
         ))}

@@ -1,0 +1,256 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(61, 40, 23, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+
+html:has(.overlay) {
+  overflow: hidden;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 1rem;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 3px solid #3d2817;
+  box-shadow: 0 8px 32px rgba(61, 40, 23, 0.3);
+  padding: 3rem;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #3d2817;
+  font-weight: bold;
+  z-index: 10;
+  padding: 0;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  color: #ff6b9d;
+  background: none;
+  transform: none;
+}
+
+.content {
+  width: 100%;
+}
+
+.breedDetails {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.breedHeader {
+  margin-bottom: 1.5rem;
+}
+
+.breedName {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #3d2817;
+}
+
+.breedOrigin {
+  margin: 0;
+  font-size: 1.125rem;
+  color: #5a4a3a;
+  font-weight: 600;
+}
+
+.breedDescription {
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+  color: #5a4a3a;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background: #fce8b8;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  text-align: left;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9375rem;
+  color: #3d2817;
+}
+
+.detailItem strong {
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #3d2817;
+}
+
+.detailItem span {
+  font-size: 1rem;
+  color: #5a4a3a;
+}
+
+.imagesSection {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 2px solid #3d2817;
+}
+
+.imagesSectionTitle {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3d2817;
+  text-align: center;
+}
+
+.imagesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.imageCard {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(61, 40, 23, 0.1);
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  position: relative;
+  border: 3px solid #3d2817;
+  height: 200px;
+  display: block;
+  text-decoration: none;
+}
+
+.imageCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(255, 107, 157, 0.3);
+}
+
+.imageCard:nth-child(1) {
+  background-color: #fce8b8;
+}
+
+.imageCard:nth-child(2) {
+  background-color: #a8d8d4;
+}
+
+.imageCard:nth-child(3) {
+  background-color: #f5c9b4;
+}
+
+.imageCard:nth-child(4) {
+  background-color: #f5a973;
+}
+
+.gridImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.125rem;
+  color: #3d2817;
+}
+
+.error {
+  color: #dc3545;
+}
+
+.noImages {
+  text-align: center;
+  color: #8b7355;
+  font-style: italic;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 1rem;
+  }
+
+  .modal {
+    max-height: 95vh;
+    padding: 2rem 1.5rem;
+  }
+
+  .breedName {
+    font-size: 2rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .imagesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .imageCard {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 1.5rem 1rem;
+  }
+
+  .breedName {
+    font-size: 1.5rem;
+  }
+
+  .detailsGrid {
+    gap: 0.75rem;
+  }
+
+  .imagesGrid {
+    grid-template-columns: 1fr;
+  }
+}

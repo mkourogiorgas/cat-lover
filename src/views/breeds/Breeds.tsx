@@ -31,7 +31,7 @@ const Breeds = () => {
             key={breed.id}
             cat={U.transformBreedToCatObject(breed)}
             isFavourite={false}
-            hasTitle
+            isBreed
           />
         ))}
       </div>

@@ -21,7 +21,6 @@ const useFavouriteButton = ({
     event.stopPropagation();
     dispatch(favouritesActions.toggleFavourite(cat));
   };
-
   const isCompact = variant === 'compact';
   const text = U.getButtonText(isFavourite);
   const fillColor = U.getHeartFillColor(isCompact, isFavourite);

@@ -3,30 +3,32 @@ import CardSkeleton from './CardSkeleton';
 import useCard from './useCard';
 import FavouriteButton from '../favouriteButton';
 
+import U from './utils';
 import styles from './Card.module.css';
 import type { Cat } from '../../types';
 
 type CardProps = {
   cat: Cat;
   isFavourite: boolean;
-  hasTitle: boolean;
+  isBreed: boolean;
 };
 
-const Card = ({ cat, isFavourite, hasTitle }: CardProps) => {
-  const { breedText, isLoaded, getImagePosition, handleImageLoaded } = useCard({
+const Card = ({ cat, isFavourite, isBreed }: CardProps) => {
+  const { breedText, isLoaded, handleCardClick, handleImageLoaded } = useCard({
     cat,
+    isBreed,
   });
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={handleCardClick}>
       <div className={styles.imageContainer}>
         {!isLoaded && <CardSkeleton />}
         <CardImage
           cat={cat}
-          imagePosition={getImagePosition()}
+          imagePosition={U.getImagePosition(cat)}
           onLoad={handleImageLoaded}
         />
-        {!hasTitle && (
+        {!isBreed && (
           <div className={styles.favouriteButtonWrapper}>
             <FavouriteButton
               cat={cat}
@@ -35,7 +37,7 @@ const Card = ({ cat, isFavourite, hasTitle }: CardProps) => {
             />
           </div>
         )}
-        {hasTitle && breedText && (
+        {isBreed && breedText && (
           <div className={styles.breedName}>{breedText}</div>
         )}
       </div>

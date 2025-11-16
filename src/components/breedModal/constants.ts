@@ -1,0 +1,37 @@
+const DETAIL_LABELS_AFFECTION_LEVEL = 'Affection Level';
+const DETAIL_LABELS_CHILD_FRIENDLY = 'Child Friendly';
+const DETAIL_LABELS_DOG_FRIENDLY = 'Dog Friendly';
+const DETAIL_LABELS_LIFE_SPAN = 'Life Span';
+const DETAIL_LABELS_TEMPERAMENT = 'Temperament';
+const DETAIL_LABELS_WEIGHT = 'Weight';
+const ERROR_TEXT = 'Failed to load breed images';
+const EXAMPLE_IMAGES_TITLE = 'Breed Cats';
+const LOADING_TEXT = 'Loading breed images...';
+const MAX_IMAGES_TO_DISPLAY = 4;
+const MAX_RATING = 5;
+const NO_IMAGES_TEXT = 'No images found for this breed';
+const STAR_EMPTY = '☆';
+const STAR_FILLED = '★';
+const WEIGHT_UNITS_KG = 'kg';
+const WEIGHT_UNITS_LBS = 'lbs';
+const YEARS_SUFFIX = 'years';
+
+export default {
+  DETAIL_LABELS_AFFECTION_LEVEL,
+  DETAIL_LABELS_CHILD_FRIENDLY,
+  DETAIL_LABELS_DOG_FRIENDLY,
+  DETAIL_LABELS_LIFE_SPAN,
+  DETAIL_LABELS_TEMPERAMENT,
+  DETAIL_LABELS_WEIGHT,
+  ERROR_TEXT,
+  EXAMPLE_IMAGES_TITLE,
+  LOADING_TEXT,
+  MAX_IMAGES_TO_DISPLAY,
+  MAX_RATING,
+  NO_IMAGES_TEXT,
+  STAR_EMPTY,
+  STAR_FILLED,
+  WEIGHT_UNITS_KG,
+  WEIGHT_UNITS_LBS,
+  YEARS_SUFFIX,
+};

@@ -1,38 +1,42 @@
 import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import C from './constants';
-import type { Breed, Cat } from '../../types';
+import U from './utils';
+import type { Cat } from '../../types';
 
 type UseCardProps = {
   cat: Cat;
+  isBreed: boolean;
 };
 
-const useCard = ({ cat }: UseCardProps) => {
+const useCard = ({ cat, isBreed }: UseCardProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const getImagePosition = () => {
-    const imageRatio = cat.height / cat.width;
-    if (imageRatio > C.HIGH_IMAGE_RATIO_THRESHOLD) return 'center 15%';
-    if (imageRatio > C.MEDIUM_IMAGE_RATIO_THRESHOLD) return 'center 25%';
-    return 'center';
-  };
+  const hasBreeds: boolean = !!cat.breeds?.length;
+  const breedId: string = cat.breeds?.[0]?.id ?? '';
+  const breedText: string = hasBreeds ? U.formatBreedNames(cat.breeds!) : '';
 
-  const formatBreedNames = (breeds: Breed[]): string => {
-    return breeds.map((breed) => breed.name).join(' - ');
+  const handleCardClick = () => {
+    if (isBreed && breedId) {
+      navigate(`/breeds/${breedId}`);
+    } else {
+      const basePath = location.pathname.startsWith('/favourites')
+        ? '/favourites'
+        : '';
+      navigate(`${basePath}/cat/${cat.id}`);
+    }
   };
 
   const handleImageLoaded = () => {
     setIsLoaded(true);
   };
 
-  const hasBreeds = !!cat.breeds?.length;
-
-  const breedText = hasBreeds ? formatBreedNames(cat.breeds!) : '';
-
   return {
     breedText,
     isLoaded,
-    getImagePosition,
+    handleCardClick,
     handleImageLoaded,
   };
 };

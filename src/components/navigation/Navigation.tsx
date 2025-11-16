@@ -29,7 +29,7 @@ const Navigation = () => {
             {C.GALLERY}
           </Link>
           <Link
-            to={C.BREEDS_PATH}
+            to="/breeds"
             className={`${styles.link} ${isBreedsActive ? styles.linkActive : ''}`}
           >
             {C.BREEDS}
