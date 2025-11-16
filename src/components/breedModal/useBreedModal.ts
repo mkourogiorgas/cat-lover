@@ -1,8 +1,13 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { fetchImagesByBreed } from '../../api';
-import { selectBreeds, useCatsSelector } from '../../store/hooks';
+import { analyticsActions } from '../../store/analyticsSlice';
+import {
+  selectBreeds,
+  useCatsDispatch,
+  useCatsSelector,
+} from '../../store/hooks';
 
 import C from './constants';
 import type { Breed, Cat } from '../../types';
@@ -14,9 +19,11 @@ const useBreedModal = () => {
 
   const navigate = useNavigate();
   const { breedId } = useParams<{ breedId: string }>();
+  const dispatch = useCatsDispatch();
 
   const breeds = useCatsSelector(selectBreeds);
   const breed: Breed | null = breedId ? breeds[breedId] : null;
+  const breedName: string = breed?.name || '';
 
   const loadBreedImages = useCallback(() => {
     if (!breedId) {
@@ -46,6 +53,12 @@ const useBreedModal = () => {
       handleClose();
     }
   };
+
+  useEffect(() => {
+    if (breedName) {
+      dispatch(analyticsActions.incrementBreedView({ breedName }));
+    }
+  }, [breedName, dispatch]);
 
   return {
     breed,

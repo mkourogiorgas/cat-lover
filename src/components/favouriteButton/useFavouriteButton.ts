@@ -23,13 +23,15 @@ const useFavouriteButton = ({
   };
   const isCompact = variant === 'compact';
   const text = U.getButtonText(isFavourite);
-  const fillColor = U.getHeartFillColor(isCompact, isFavourite);
+  const fillColor = U.getFillColor(isCompact, isFavourite);
+  const strokeColor = U.getStrokeColor(isCompact);
   const buttonClass = U.getButtonClassName(isCompact, isFavourite);
 
   return {
     text,
     buttonClass,
     fillColor,
+    strokeColor,
     showText: !isCompact,
     handleFavouriteToggle,
   };

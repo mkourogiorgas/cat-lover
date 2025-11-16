@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { BreedModal, Modal } from './components';
-import { Breeds, Favourites, Gallery } from './views';
+import { Breeds, Analytics, Favourites, Gallery } from './views';
 
 const AppRouter = () => {
   return (
@@ -16,6 +16,7 @@ const AppRouter = () => {
       <Route path="/favourites" element={<Favourites />}>
         <Route path="cat/:imageId" element={<Modal />} />
       </Route>
+      <Route path="/analytics" element={<Analytics />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

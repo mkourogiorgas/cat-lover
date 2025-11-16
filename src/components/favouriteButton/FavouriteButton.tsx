@@ -14,8 +14,14 @@ const FavouriteButton = ({
   isFavourite,
   variant,
 }: FavouriteButtonProps) => {
-  const { text, buttonClass, fillColor, showText, handleFavouriteToggle } =
-    useFavouriteButton({ cat, isFavourite, variant });
+  const {
+    text,
+    buttonClass,
+    fillColor,
+    strokeColor,
+    showText,
+    handleFavouriteToggle,
+  } = useFavouriteButton({ cat, isFavourite, variant });
 
   return (
     <button
@@ -23,7 +29,7 @@ const FavouriteButton = ({
       onClick={handleFavouriteToggle}
       aria-label={text}
     >
-      <FavouriteButtonImage fillColor={fillColor} />
+      <FavouriteButtonImage fillColor={fillColor} strokeColor={strokeColor} />
       {showText && <span>{text}</span>}
     </button>
   );

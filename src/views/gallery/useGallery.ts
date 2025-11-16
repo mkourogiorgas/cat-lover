@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 
 import { fetchRandomCats } from '../../api';
+import { analyticsActions } from '../../store/analyticsSlice';
 import { galleryActions } from '../../store/gallerySlice';
 import { useCatsDispatch, useCatsSelector } from '../../store/hooks';
 import { selectFavourites, selectGallery } from '../../store/hooks';
@@ -33,6 +34,7 @@ const useGallery = () => {
         );
 
         dispatch(galleryActions.addCats(uniqueNewCats));
+        dispatch(analyticsActions.incrementGalleryCats(uniqueNewCats.length));
         setCats((prev) => [...prev, ...uniqueNewCats]);
       })
       .catch((err) => {

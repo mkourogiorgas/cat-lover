@@ -13,4 +13,8 @@ export const selectFavourites = (state: RootState) => state.favourites;
 
 export const selectGallery = (state: RootState) => state.gallery;
 
-export const selectBreeds = (state: RootState) => state.breeds;
+export const selectBreeds = (state: RootState) => state.breeds.data;
+
+export const selectBreedsWithMeta = (state: RootState) => state.breeds;
+
+export const selectAnalytics = (state: RootState) => state.analytics;

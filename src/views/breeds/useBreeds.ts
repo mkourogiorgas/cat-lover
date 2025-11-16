@@ -4,10 +4,12 @@ import { fetchAllBreeds } from '../../api';
 import { breedsActions } from '../../store/breedsSlice';
 import {
   selectBreeds,
+  selectBreedsWithMeta,
   useCatsDispatch,
   useCatsSelector,
 } from '../../store/hooks';
 
+import U from './utils';
 import C from './constants';
 import type { Breed } from '../../types';
 
@@ -17,11 +19,18 @@ const useBreeds = () => {
 
   const dispatch = useCatsDispatch();
   const cachedBreeds: Breed[] = Object.values(useCatsSelector(selectBreeds));
+  const breedsWithMeta = useCatsSelector(selectBreedsWithMeta);
+  const lastFetched = breedsWithMeta?.lastFetched;
 
   const areBreedsEmpty: boolean = cachedBreeds.length === 0;
   const isInitialLoading: boolean = areBreedsEmpty && isLoading;
+  const shouldFetch = U.shouldFetchBreeds(areBreedsEmpty, lastFetched);
 
   const loadBreeds = useCallback(() => {
+    if (!shouldFetch) {
+      return;
+    }
+
     setIsLoading(true);
     setError(null);
 
@@ -36,7 +45,7 @@ const useBreeds = () => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [dispatch]);
+  }, [dispatch, shouldFetch]);
 
   return {
     cachedBreeds,

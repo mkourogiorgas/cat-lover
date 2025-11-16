@@ -1,12 +1,13 @@
 import C from './constants';
 import styles from './FavouriteButton.module.css';
 
-const getHeartFillColor = (
-  isCompact: boolean,
-  isFavourite: boolean
-): string => {
+const getFillColor = (isCompact: boolean, isFavourite: boolean): string => {
   if (!isFavourite) return 'none';
   return isCompact ? C.HEART_FILL_COMPACT : C.HEART_FILL_EXPANDED;
+};
+
+const getStrokeColor = (isCompact: Boolean): string => {
+  return isCompact ? C.HEART_STROKE_COMPACT : C.HEART_STROKE_EXPANDED;
 };
 
 const getButtonClassName = (
@@ -22,7 +23,8 @@ const getButtonText = (isFavourite: boolean): string => {
 };
 
 const U = {
-  getHeartFillColor,
+  getFillColor,
+  getStrokeColor,
   getButtonClassName,
   getButtonText,
 };

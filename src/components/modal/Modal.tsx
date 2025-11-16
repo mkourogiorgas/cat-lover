@@ -40,9 +40,7 @@ const Modal = () => {
             />
           </div>
           <Details breed={breed} />
-          <div className={styles.linkCenter}>
-            <Link breed={breed} breedLinkPath={breedLinkPath} />
-          </div>
+          <Link breed={breed} breedLinkPath={breedLinkPath} />
         </div>
       </>
     );

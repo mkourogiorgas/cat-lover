@@ -6,6 +6,7 @@ type UseNavigationState = {
   isGalleryActive: boolean;
   isBreedsActive: boolean;
   isFavouritesActive: boolean;
+  isDemographicsActive: boolean;
 };
 
 const useNavigation = (): UseNavigationState => {
@@ -24,11 +25,13 @@ const useNavigation = (): UseNavigationState => {
 
   const isBreedsActive = isActive('/breeds');
   const isFavouritesActive = isActive(C.FAVOURITES_PATH);
+  const isDemographicsActive = isActive(C.ANALYTICS_PATH);
 
   return {
     isGalleryActive,
     isBreedsActive,
     isFavouritesActive,
+    isDemographicsActive,
   };
 };
 

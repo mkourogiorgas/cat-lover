@@ -18,6 +18,9 @@ const favouritesSlice = createSlice({
         state[cat.id] = cat;
       }
     },
+    loadFavourites: (_state, action: PayloadAction<FavouritesState>) => {
+      return action.payload;
+    },
     clearFavourites: () => initialFavouritesState,
   },
 });

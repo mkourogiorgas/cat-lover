@@ -6,8 +6,12 @@ import C from './constants';
 import styles from './Navigation.module.css';
 
 const Navigation = () => {
-  const { isGalleryActive, isBreedsActive, isFavouritesActive } =
-    useNavigation();
+  const {
+    isGalleryActive,
+    isBreedsActive,
+    isFavouritesActive,
+    isDemographicsActive,
+  } = useNavigation();
 
   return (
     <nav className={styles.nav}>
@@ -29,7 +33,7 @@ const Navigation = () => {
             {C.GALLERY}
           </Link>
           <Link
-            to="/breeds"
+            to={C.BREEDS}
             className={`${styles.link} ${isBreedsActive ? styles.linkActive : ''}`}
           >
             {C.BREEDS}
@@ -39,6 +43,12 @@ const Navigation = () => {
             className={`${styles.link} ${isFavouritesActive ? styles.linkActive : ''}`}
           >
             {C.FAVOURITES}
+          </Link>
+          <Link
+            to={C.ANALYTICS_PATH}
+            className={`${styles.link} ${isDemographicsActive ? styles.linkActive : ''}`}
+          >
+            {C.ANALYTICS}
           </Link>
         </div>
       </div>

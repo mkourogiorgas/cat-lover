@@ -1,20 +1,18 @@
-import C from './constants';
-
 type FavouriteButtonImageProps = {
   fillColor: string;
-  stroke?: string;
+  strokeColor: string;
 };
 
 const FavouriteButtonImage = ({
   fillColor,
-  stroke = C.HEART_STROKE,
+  strokeColor,
 }: FavouriteButtonImageProps) => (
   <svg
     width="24"
     height="24"
     viewBox="0 0 24 24"
     fill={fillColor}
-    stroke={stroke}
+    stroke={strokeColor}
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
