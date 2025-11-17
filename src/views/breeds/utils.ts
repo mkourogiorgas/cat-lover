@@ -1,5 +1,5 @@
-import type { Breed, Cat } from '../../types';
 import C from './constants';
+import type { Breed, Cat } from '../../types';
 
 const transformBreedToCatObject = (breed: Breed): Cat => {
   return {

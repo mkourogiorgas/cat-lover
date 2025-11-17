@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { BreedModal, Modal } from './components';
-import { Breeds, Analytics, Favourites, Gallery } from './views';
+import { Analytics, Breeds, Favourites, Gallery } from './views';
 
 const AppRouter = () => {
   return (

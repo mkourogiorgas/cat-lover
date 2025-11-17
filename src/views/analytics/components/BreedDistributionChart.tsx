@@ -6,11 +6,11 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from 'recharts';
+import useStats from './useStats';
+
 import U from '../utils';
 import C from '../constants';
-
 import styles from '../Analytics.module.css';
-import useStats from './useStats';
 
 const BreedDistributionChart = () => {
   const { pieChartData } = useStats();

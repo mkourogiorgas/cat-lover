@@ -6,7 +6,7 @@ const getFillColor = (isCompact: boolean, isFavourite: boolean): string => {
   return isCompact ? C.HEART_FILL_COMPACT : C.HEART_FILL_EXPANDED;
 };
 
-const getStrokeColor = (isCompact: Boolean): string => {
+const getStrokeColor = (isCompact: boolean): string => {
   return isCompact ? C.HEART_STROKE_COMPACT : C.HEART_STROKE_EXPANDED;
 };
 

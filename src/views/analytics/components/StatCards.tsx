@@ -1,5 +1,6 @@
-import styles from '../Analytics.module.css';
 import useStats from './useStats';
+
+import styles from '../Analytics.module.css';
 
 const StatCards = () => {
   const { stats } = useStats();

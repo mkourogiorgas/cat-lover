@@ -1,8 +1,9 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect,it } from 'vitest';
 import breedsReducer, {
   breedsActions,
   type BreedsStateWithMeta,
 } from '../../../src/store/breedsSlice';
+
 import type { Breed } from '../../../src/types';
 
 const { addBreeds, clearBreeds, loadBreeds } = breedsActions;

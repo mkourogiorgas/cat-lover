@@ -1,4 +1,5 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect,it } from 'vitest';
+
 import U from '../../../src/views/analytics/utils';
 
 const { formatStats, formatBarStats, formatPieChartData } = U;

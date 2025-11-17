@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+
 import {
   selectAnalytics,
   selectFavourites,
@@ -34,7 +35,7 @@ const useStats = () => {
 
   const pieChartData = useMemo(
     () => U.formatPieChartData(breedsViewed),
-    [analytics]
+    [breedsViewed]
   );
 
   return { barStats, stats, pieChartData };

@@ -1,7 +1,8 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect,it } from 'vitest';
 import analyticsReducer, {
   analyticsActions,
 } from '../../../src/store/analyticsSlice';
+
 import type { AnalyticsState } from '../../../src/store/types';
 
 const {

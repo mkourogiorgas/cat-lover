@@ -7,6 +7,7 @@ import {
   useCatsDispatch,
   useCatsSelector,
 } from '../store/hooks';
+
 import C from './constants';
 
 const useBreedsPersistence = () => {

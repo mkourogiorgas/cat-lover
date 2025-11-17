@@ -8,10 +8,10 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-
-import styles from '../Analytics.module.css';
 import useStats from './useStats';
+
 import C from '../constants';
+import styles from '../Analytics.module.css';
 
 const ViewsVsFavoritesChart = () => {
   const { barStats } = useStats();

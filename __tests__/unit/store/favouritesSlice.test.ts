@@ -1,7 +1,8 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect,it } from 'vitest';
 import favouritesReducer, {
   favouritesActions,
 } from '../../../src/store/favouritesSlice';
+
 import type { FavouritesState } from '../../../src/store/types';
 import type { Cat } from '../../../src/types';
 

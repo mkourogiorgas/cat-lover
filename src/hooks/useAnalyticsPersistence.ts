@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
 import { analyticsActions } from '../store/analyticsSlice';
-
 import {
   selectAnalytics,
   useCatsDispatch,
   useCatsSelector,
 } from '../store/hooks';
+
 import C from './constants';
 
 const useAnalyticsPersistence = () => {
