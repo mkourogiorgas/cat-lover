@@ -1,8 +1,16 @@
 # 🐱 Cat Lover - React Cat Gallery Application
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/396c4d72-7231-4d0f-b1e3-411fb228d2f6" alt="cat_lover_breed_modal" height="240" />
+  <img src="https://github.com/user-attachments/assets/f53905cb-2c12-4116-ab28-948158c691a7" alt="cat_lover_cat_modal" height="240" />
+  <img src="https://github.com/user-attachments/assets/b53951f0-281d-4983-8433-0b7cbe5273d4" alt="cat_lover_analytics" height="240"   />
+</p>
+
+
+
 **A React/TypeScript application for cat enthusiasts built with TheCatAPI**
 
-> 🎮 **[Live Demo](#)** | 🔄 **Smart Caching** | 📊 **Analytics Dashboard** | 🔗 **Shareable URLs**
+> 🎮 **[Live Demo](https://mkour-cat-lover.vercel.app/)** | 🔄 **Smart Caching** | 📊 **Analytics Dashboard** | 🔗 **Shareable URLs**
 
 <div align="center">
 
