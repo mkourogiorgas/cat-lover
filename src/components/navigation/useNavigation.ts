@@ -23,7 +23,7 @@ const useNavigation = (): UseNavigationState => {
   const isGalleryActive =
     isActive(C.DEFAULT_PATH) || location.pathname.startsWith('/cat/');
 
-  const isBreedsActive = isActive('/breeds');
+  const isBreedsActive = isActive(C.BREEDS_PATH);
   const isFavouritesActive = isActive(C.FAVOURITES_PATH);
   const isDemographicsActive = isActive(C.ANALYTICS_PATH);
 

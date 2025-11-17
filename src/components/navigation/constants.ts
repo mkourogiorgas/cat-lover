@@ -1,4 +1,5 @@
 const BREEDS = 'Breeds';
+const BREEDS_PATH = '/breeds';
 const DEFAULT_PATH = '/';
 const GALLERY = 'Gallery';
 const IMAGE_SOURCE = '/cat.png';
@@ -11,6 +12,7 @@ const TITLE = 'Cat Lover';
 
 export default {
   BREEDS,
+  BREEDS_PATH,
   DEFAULT_PATH,
   GALLERY,
   IMAGE_SOURCE,

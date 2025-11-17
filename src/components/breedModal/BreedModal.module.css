@@ -21,7 +21,7 @@ html:has(.overlay) {
 .modal {
   background: #fff;
   border-radius: 1rem;
-  max-width: 1200px;
+  max-width: 800px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
@@ -152,7 +152,7 @@ html:has(.overlay) {
     box-shadow 0.2s;
   position: relative;
   border: 3px solid #3d2817;
-  height: 200px;
+  height: 180px;
   display: block;
   text-decoration: none;
 }
