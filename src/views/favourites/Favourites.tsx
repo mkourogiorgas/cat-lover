@@ -5,7 +5,7 @@ import Card from '../../components/card';
 
 import C from './constants';
 import layoutStyles from '../shared/viewsLayout.module.css';
-import styles from './favourites.module.css';
+import styles from './Favourites.module.css';
 
 const Favourites = () => {
   const { favouriteCats, isFavouritesEmpty } = useFavourites();

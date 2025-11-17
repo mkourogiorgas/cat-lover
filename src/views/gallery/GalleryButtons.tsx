@@ -1,5 +1,5 @@
 import C from './constants';
-import styles from './gallery.module.css';
+import styles from './Gallery.module.css';
 
 type GalleryButtonsProps = {
   isLoading: boolean;

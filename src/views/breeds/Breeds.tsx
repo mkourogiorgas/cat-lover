@@ -16,7 +16,7 @@ const Breeds = () => {
     if (areBreedsEmpty) {
       loadBreeds();
     }
-  }, []);
+  }, [areBreedsEmpty, loadBreeds]);
 
   if (isInitialLoading) {
     return <LoadingSpinner />;
